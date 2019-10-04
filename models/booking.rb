@@ -1,6 +1,6 @@
-require_relative( '../db.sql_runner' )
+require_relative( '../db/sql_runner' )
 
-class booking
+class Booking
 
   attr_reader( :id, :member_id, :activity_id)
 
@@ -9,5 +9,40 @@ class booking
     @member_id = options['member_id']
     @activity_id = options['activity_id']
   end
+
+  def save()
+      sql = "INSERT INTO bookings
+      (
+        member_id,
+        activity_id
+        )
+        VALUES
+        (
+          $1, $2
+          )
+          RETURNING id"
+          values = [@member_id, @activity_id]
+          results = SqlRunner.run(sql, values)
+          @id = results.first()['id'].to_i
+    end
+
+    def self.all()
+      sql = "SELECT * FROM bookings"
+      results = SqlRunner.run( sql )
+      return results.map { |booking| Booking.new( booking )}
+    end
+
+    def self.find( id )
+      sql = "SELECT * FROM bookings
+      WHERE id = $1"
+      values = [id]
+      results = SqlRunner.run( swl, values )
+      return Booking.new( results.first )
+    end
+
+    def self.delete_all
+      sql = "DELETE FROM bookings"
+      SqlRunner.run( sql )
+    end
 
 end
