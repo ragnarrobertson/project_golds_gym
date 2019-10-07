@@ -47,7 +47,7 @@ class Activity
     sql = "SELECT * FROM activities
     WHERE id = $1"
     values = [id]
-    results = SqlRunner.run( swl, values )
+    results = SqlRunner.run( sql, values )
     return Activity.new( results.first )
   end
 

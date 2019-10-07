@@ -1,5 +1,6 @@
-<h1><%= @activity.name %></h1>
+<h1><%= @activity.activity_name %></h1>
 
 <p>Day: <%= @activity.day %></p>
 <p>Start Time: <%= @activity.start_time %></p>
 <p>Duration: <%= @activity.duration %></p>
+<p><a href="/activity/<%= @activity.id %>/edit">Edit Activity</a></p>

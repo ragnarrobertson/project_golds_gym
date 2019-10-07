@@ -1,0 +1,24 @@
+<form action="/activities/<%= @activity.id %>" method="post">
+
+  <label for="activity-name-field">Insert Activity Name</label>
+  <input type="text" name="activity_name" id="activity-name-field" value="<%= @activity.activity_name %>">
+
+  <br>
+
+  <label for="activity-day">Insert The Day The Activity Runs On</label>
+  <input type="text" name="day" id="activity-day" value="<%= @activity.day %>">
+
+  <br>
+
+  <label for="activity-start-time">Enter when the Activity stars</label>
+  <input type="text" name="start_time" id="activity-start-time" value="<%= @activity.start_time %>">
+
+<br>
+
+  <label for="activity-duration">Enter how long the activity will last</label>
+  <input type="text" name="duration" id="activity-duration " value="<%= @activity.duration%>">
+
+  <br>
+
+  <input type="submit" value="Create Activity">
+</form>
