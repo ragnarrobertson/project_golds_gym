@@ -27,3 +27,9 @@ get "/activity/:id/edit" do
   @activity = Activity.find( params[:id] )
   erb( :"activities/edit" )
 end
+
+post "/activity/:id/delete" do
+  activity = Activity.find( params[:id] )
+  activity.delete()
+  redirect to '/activities'
+end
