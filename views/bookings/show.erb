@@ -1,0 +1,22 @@
+<h1>Booking Infomation</h1>
+
+<!-- <p>Member Name:  @booking.member_id.first_name %></p>
+<p>Activity Booked:  @booking.activity_id.activity_name %></p>
+<form method="post" action="/bookings/@booking.id /delete">
+  <input type="submit" value="Cancel Booking"/>
+</form> -->
+
+<p>
+
+<ul>
+  <% for booking in @bookings %>
+  <li>
+  <p><%= booking.member.first_name %> --- <%= booking.activity.activity_name %> </p>
+    <p>
+      <form action="/bookings/<%= booking.id %>/delete" method="POST">
+        <input type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  <% end %>
+</ul>

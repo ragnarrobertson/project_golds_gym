@@ -1,0 +1,16 @@
+<h1>Current Member Bookings</h1>
+
+<table>
+  <tr>
+    <th>Member Name:</th>
+    <th></th>
+    <th>Activity Booked on:</th>
+  </tr>
+    <% for booking in @bookings %>
+  <tr>
+    <td> <a href="/bookings/<%= booking.id %>"><%= booking.member.first_name %></a></td>
+    <td>|</td>
+    <td><%= booking.activity.activity_name %></td>
+ </tr>
+    <% end %>
+</table>
