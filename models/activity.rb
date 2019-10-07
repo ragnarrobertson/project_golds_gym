@@ -30,6 +30,13 @@ class Activity
         @id = results.first()['id'].to_i
   end
 
+  def activities()
+    sql = "SELECT m. FROM members m INNER JOIN bookings b on b.member_id = m.id WHERE b.activity_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.,map { |hash| Member.new( hash) }
+  end
+
   def self.all()
     sql = "SELECT * FROM activities"
     results = SqlRunner.run( sql )

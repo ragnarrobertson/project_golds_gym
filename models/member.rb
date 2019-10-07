@@ -28,6 +28,13 @@ class Member
           @id = results.first()['id'].to_i
     end
 
+    def members()
+      sql = "SELECT a. FROM activities a INNER JOIN bookings b on b.activity_id = a.id WHERE b.member_id = $1;"
+      values = [@id]
+      results = SqlRunner.run(sql, values)
+      return results.,map { |hash| Member.new( hash) }
+    end
+
     def self.all()
       sql = "SELECT * FROM members"
       results = SqlRunner.run( sql )
