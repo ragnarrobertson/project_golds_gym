@@ -5,12 +5,12 @@
     <th>Activity</th>
     <th></th>
     <th>Day</th>
-    <th>start_time</th>
+    <th>Start Time</th>
     <th>Duration</th>
   </tr>
     <% for activity in @activities %>
   <tr>
-    <td> <a href="/activity/<%= activity.id %>"><%= activity.name %></a></td>
+    <td> <a href="/activity/<%= activity.id %>"><%= activity.activity_name %></a></td>
     <td>|</td>
     <td><%= activity.day %></td>
     <td><%= activity.start_time %></td>
