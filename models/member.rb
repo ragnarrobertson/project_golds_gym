@@ -32,7 +32,7 @@ class Member
       sql = "SELECT a. FROM activities a INNER JOIN bookings b on b.activity_id = a.id WHERE b.member_id = $1;"
       values = [@id]
       results = SqlRunner.run(sql, values)
-      return results.,map { |hash| Member.new( hash) }
+      return results.map { |hash| Member.new( hash) }
     end
 
     def self.all()
@@ -45,7 +45,7 @@ class Member
       sql = "SELECT * FROM members
       WHERE id = $1"
       values = [id]
-      results = SqlRunner.run( swl, values )
+      results = SqlRunner.run( sql, values )
       return Member.new( results.first )
     end
 

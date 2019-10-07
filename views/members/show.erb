@@ -1,0 +1,9 @@
+<h1>Member Infomation</h1>
+
+<p>First Name: <%= @member.first_name %></p>
+<p>Last Name: <%= @member.last_name %></p>
+<p>Date Of Birth: <%= @member.date_of_birth %></p>
+<p><a href="/members/<%= @member.id %>/edit">Edit Member Information</a></p>
+<form method="post" action="/members/<%= @member.id %>/delete">
+  <input type="submit" value="Delete Member"/>
+</form>
