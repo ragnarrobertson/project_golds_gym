@@ -30,5 +30,7 @@ activity1 = Activity.new({
     })
 
     booking1.save()
-  # binding.pry()
-  # nil
+
+
+  binding.pry()
+  nil

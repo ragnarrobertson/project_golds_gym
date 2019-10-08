@@ -12,11 +12,9 @@
   <% for booking in @bookings %>
   <li>
   <p><%= booking.member.first_name %> --- <%= booking.activity.activity_name %> </p>
-    <p>
-      <form action="/bookings/<%= booking.id %>/delete" method="POST">
-        <input type="submit" value="delete" />
-      </form>
-    </p>
   </li>
   <% end %>
+  <form action="/bookings/<%= booking.id %>/delete" method="POST">
+    <input type="submit" value="Cancel Booking" />
+  </form>
 </ul>

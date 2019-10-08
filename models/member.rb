@@ -8,7 +8,7 @@ class Member
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @date_of_birth = options['date_of_birth'].to_i
+    @date_of_birth = options['date_of_birth']
   end
 
     def save()
@@ -28,11 +28,27 @@ class Member
           @id = results.first()['id'].to_i
     end
 
-    def members()
-      sql = "SELECT a. FROM activities a INNER JOIN bookings b on b.activity_id = a.id WHERE b.member_id = $1;"
+    def update()
+    sql = "UPDATE members
+    SET
+    (
+      first_name,
+      last_name,
+      date_of_birth
+    ) =
+    (
+      $1, $2, $3
+    )
+    WHERE id = $4"
+    values = [@first_name, @last_name, @date_of_birth, @id]
+    SqlRunner.run( sql, values )
+  end
+
+    def activities()
+      sql = "SELECT a.* FROM activities a INNER JOIN bookings b on b.activity_id = a.id WHERE b.member_id = $1;"
       values = [@id]
       results = SqlRunner.run(sql, values)
-      return results.map { |hash| Member.new( hash) }
+      return results.map { |hash| Activity.new( hash) }
     end
 
     def self.all()

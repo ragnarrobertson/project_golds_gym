@@ -1,4 +1,4 @@
-<form action="/activities/<%= @activity.id %>" method="post">
+<form action="/activity/<%= @activity.id %>" method="post">
 
   <label for="activity-name-field">Insert Activity Name</label>
   <input type="text" name="activity_name" id="activity-name-field" value="<%= @activity.activity_name %>">
@@ -20,5 +20,5 @@
 
   <br>
 
-  <input type="submit" value="Create Activity">
+  <input type="submit" value="Update Activity">
 </form>

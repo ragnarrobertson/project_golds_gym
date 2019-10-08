@@ -28,6 +28,11 @@ get "/members/:id/edit" do
   erb( :"members/edit" )
 end
 
+post "/members/:id" do
+  Member.new( params ).update
+redirect to '/members'
+end
+
 post "/members/:id/delete" do
   member = Member.find( params[:id] )
   member.delete()

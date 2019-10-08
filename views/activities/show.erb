@@ -5,5 +5,14 @@
 <p>Duration: <%= @activity.duration %></p>
 <p><a href="/activity/<%= @activity.id %>/edit">Edit Activity</a></p>
 <form method="post" action="/activity/<%= @activity.id %>/delete">
-  <input type="submit" value="Delete Order"/>
+  <input type="submit" value="Delete Activity"/>
 </form>
+
+
+<hr>
+<h2>Members Registered </h2>
+<ul>
+  <% for member in @members  %>
+  <li><%= member.first_name %></li>
+  <% end%>
+</ul>

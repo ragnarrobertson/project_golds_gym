@@ -7,7 +7,7 @@ CREATE TABLE members
   id SERIAL8 primary key,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
-  date_of_birth INT
+  date_of_birth VARCHAR(255)
 );
 
 CREATE TABLE activities
@@ -22,6 +22,6 @@ CREATE TABLE activities
 CREATE TABLE bookings
 (
   id SERIAL8 primary key,
-  member_id INT8 references members(id),
-  activity_id INT8 references activities(id)
+  member_id INT8 references members(id) on delete cascade,
+  activity_id INT8 references activities(id) on delete cascade
 );

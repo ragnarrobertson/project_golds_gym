@@ -25,13 +25,13 @@ get '/bookings/:id' do
   erb( :"bookings/show")
 end
 
-get "/bookings/:id/edit" do
-  @booking = Booking.find( params[:id] )
-  erb( :"bookings/edit" )
-end
-
-# post "/bookings/:id/delete" do
-#   booking = Booking.find( params[:id] )
-#   booking.delete()
-#   redirect to '/bookings'
+# get "/bookings/:id/edit" do
+#   @booking = Booking.find( params[:id] )
+#   erb( :"bookings/edit" )
 # end
+
+post "/bookings/:id/delete" do
+  booking = Booking.find( params[:id] )
+  booking.delete()
+  redirect to '/bookings'
+end
