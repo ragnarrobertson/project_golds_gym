@@ -1,6 +1,7 @@
 nav {
   color: Gold;
   text-align: center;
+  text-transform: uppercase;
 }
 
   ul {
@@ -8,7 +9,7 @@ nav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: gray;
+    background-color: Gray;
     display: inline-block;
   }
 
