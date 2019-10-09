@@ -8,7 +8,7 @@
   </tr>
     <% for booking in @bookings %>
   <tr>
-    <td> <a href="/bookings/<%= booking.id %>"><%= booking.member.first_name %></a></td>
+    <td> <%= booking.member.first_name %> <%= booking.member.last_name %></td>
     <td>|</td>
     <td><%= booking.activity.activity_name %></td>
  </tr>

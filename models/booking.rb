@@ -75,27 +75,4 @@ class Booking
     SqlRunner.run( sql, values )
   end
 
-
-  # def check_if_activity_has_space()
-  #   for activity in bookings.activities
-  #   if activity.capacity >= activity.members.length
-  #
-  # end
-  #
-  #
-  # def activity_full?(activity, bookings)
-  #   capacity = 0
-  #   for booking in bookings
-  #     if booking[:activity_id] == activity[:id]
-  #       capacity += 1
-  #     end
-  #
-  #   if capacity => activity[:capacity]
-  #     return true
-  #   end
-  # end
-
-  # def pretty_name()
-  #   return "#{@first_name} #{@last_name}"
-  # end
 end
