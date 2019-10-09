@@ -9,6 +9,7 @@ class Member
     @first_name = options['first_name']
     @last_name = options['last_name']
     @date_of_birth = options['date_of_birth']
+    @premium_member = options['premium_member']
   end
 
     def save()
@@ -16,14 +17,15 @@ class Member
       (
         first_name,
         last_name,
-        date_of_birth
+        date_of_birth,
+        premium_member
         )
         VALUES
         (
-          $1, $2, $3
+          $1, $2, $3, $4
           )
           RETURNING id"
-          values = [@first_name, @last_name, @date_of_birth]
+          values = [@first_name, @last_name, @date_of_birth, @premium_member]
           results = SqlRunner.run(sql, values)
           @id = results.first()['id'].to_i
     end
@@ -34,13 +36,14 @@ class Member
     (
       first_name,
       last_name,
-      date_of_birth
+      date_of_birth,
+      premium_member
     ) =
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
-    WHERE id = $4"
-    values = [@first_name, @last_name, @date_of_birth, @id]
+    WHERE id = $5"
+    values = [@first_name, @last_name, @date_of_birth, @premium_member, @id]
     SqlRunner.run( sql, values )
   end
 

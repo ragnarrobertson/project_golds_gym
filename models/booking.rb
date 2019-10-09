@@ -40,6 +40,13 @@ class Booking
     return Activity.new( results.first )
   end
 
+  def activities()
+    sql = "SELECT * FROM activities"
+    values = [@activity_id]
+    results = SqlRunner.run( sql )
+    return results.map { |activity| Activity.new( activity) }
+  end
+
   def member()
     sql = "SELECT * FROM members
     WHERE id = $1"
@@ -68,19 +75,27 @@ class Booking
     SqlRunner.run( sql, values )
   end
 
-  def self.members(activity_id)
-    sql = "SELECT members.* from members INNER JOIN WHERE bookings.activity_id = $1"
-  end
 
+  # def check_if_activity_has_space()
+  #   for activity in bookings.activities
+  #   if activity.capacity >= activity.members.length
+  #
+  # end
+  #
+  #
+  # def activity_full?(activity, bookings)
+  #   capacity = 0
+  #   for booking in bookings
+  #     if booking[:activity_id] == activity[:id]
+  #       capacity += 1
+  #     end
+  #
+  #   if capacity => activity[:capacity]
+  #     return true
+  #   end
+  # end
 
   # def pretty_name()
   #   return "#{@first_name} #{@last_name}"
   # end
-  # 
-  # def check_capacity()
-  #   if
-  # end
-
-
-
 end

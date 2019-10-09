@@ -1,19 +1,32 @@
+<h1>Member Creation</h1>
+
+<h2>Please Enter Member Information Below</h2>
+
 <form action="/members" method="post">
 
   <label for="members-first-name">Enter Members First Name:</label>
+  <br><hr>
   <input type="text" name="first_name" id="members-first-name">
 
   <br>
 
   <label for="members-last-name">Enter Members Last Name:</label>
+  <br><hr>
   <input type="text" name="last_name" id="members-last-name">
 
   <br>
 
   <label for="members-date-of-birth">Enter Members Date Of Birth:</label>
+  <br><hr>
   <input type="text" name="date_of_birth" id="members-date-of-birth">
 
-<br>
+  <br><hr>
 
-  <input type="submit" value="Create Activity">
+  <label for="is_member_premuim">Premium Membership?:</label>
+  <input type="checkbox" name="premium_member" id="is_member_premuim">
+
+  <br><hr>
+
+  <input type="submit" value="Create Member Account" id="submit">
+
 </form>

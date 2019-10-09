@@ -7,7 +7,8 @@ CREATE TABLE members
   id SERIAL8 primary key,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
-  date_of_birth VARCHAR(255)
+  date_of_birth VARCHAR(255),
+  premium_member BOOLEAN
 );
 
 CREATE TABLE activities
@@ -16,7 +17,8 @@ CREATE TABLE activities
   activity_name VARCHAR(255),
   day VARCHAR(255),
   start_time VARCHAR(255),
-  duration INT
+  duration INT,
+  capacity INT
 );
 
 CREATE TABLE bookings

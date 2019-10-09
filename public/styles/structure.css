@@ -1,0 +1,120 @@
+nav {
+  color: Gold;
+  text-align: center;
+}
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+    display: inline-block;
+  }
+
+li {
+  margin: 10px 10px 10px 10px;
+  float: left;
+}
+
+li a {
+  display: block;
+  color: White;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: Gold;
+}
+
+h1 {
+  color: Gold;
+  /* font-family: impact; */
+  font-weight: bold;
+  letter-spacing: 20px;
+  word-spacing: 15px;
+  text-align: center;
+  text-shadow: 10px 10px 10px Salmon;
+}
+
+h2{
+  color: Gold;
+}
+
+p {
+  color: Gold;
+}
+
+body {
+  background-color: Black;
+  text-align: center;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:link {
+  color: Gold;
+
+}
+
+a:visited {
+  color: Gold;
+}
+
+a:hover {
+  color: DodgerBlue
+}
+
+/* a.button {
+
+} */
+
+table {
+  text-align: center;
+  width: 600px;
+  color: Gold;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid Gold;
+  border-top: 1px solid Gold;
+}
+
+tr:hover {
+  background-color: gray;
+}
+
+form {
+  color: Gold;
+  font-size: 120%;
+  line-height: 1.5;
+  width: 400px;
+  display: inline-block;
+}
+
+input {
+  border: 2px solid Gold;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+.submit {
+  text-align: right;
+}
+
+img {
+  display: block;
+  margin: 0px auto;
+}
+
+.pagelink {
+  display: inline-block;
+}

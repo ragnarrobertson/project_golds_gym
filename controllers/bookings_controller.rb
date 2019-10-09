@@ -10,7 +10,7 @@ end
 
 get '/bookings/new' do
   @members = Member.all()
-  @activities = Activity.all()
+  @activities = Activity.all_with_empty_spaces()
   erb(:"bookings/new")
 end
 

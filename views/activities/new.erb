@@ -1,24 +1,38 @@
+<h1>Activity Creation</h1>
+
+<h2>Please Enter Activity Information Below</h2>
+
 <form action="/activities" method="post">
 
   <label for="activity-name-field">Insert Activity Name</label>
+  <br>
   <input type="text" name="activity_name" id="activity-name-field">
 
-  <br>
+  <br> <hr>
 
   <label for="activity-day">Insert The Day The Activity Runs On</label>
+  <br>
   <input type="text" name="day" id="activity-day">
 
-  <br>
+  <br> <hr>
 
   <label for="activity-start-time">Enter when the Activity stars</label>
+  <br>
   <input type="text" name="start_time" id="activity-start-time">
 
-<br>
+  <br> <hr>
 
   <label for="activity-duration">Enter how long the activity will last</label>
+  <br>
   <input type="text" name="duration" id="activity-duration ">
 
+  <br> <hr>
+
+  <label for="activity-capacity">Activity Capacity</label>
   <br>
+  <input type="text" name="capacity" id="activity-capacity">
+
+  <br> <hr>
 
   <input type="submit" value="Create Activity">
 </form>
