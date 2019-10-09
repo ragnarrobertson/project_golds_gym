@@ -12,7 +12,7 @@ activity1 = Activity.new({
   "day" => "Monday",
   "start_time" => "0600",
   "duration" => "45 Minutes",
-  "capacity" => 0
+  "capacity" => 5
   })
 
   activity2 = Activity.new({
@@ -20,7 +20,7 @@ activity1 = Activity.new({
     "day" => "Wednesday",
     "start_time" => "1800",
     "duration" => "45 Minutes",
-    "capacity" => 0
+    "capacity" => 5
     })
 
     activity3 = Activity.new({
@@ -28,7 +28,7 @@ activity1 = Activity.new({
       "day" => "Friday",
       "start_time" => "1900",
       "duration" => "45 Minutes",
-      "capacity" => 11
+      "capacity" => 10
       })
 
       activity4 = Activity.new({
@@ -36,7 +36,7 @@ activity1 = Activity.new({
         "day" => "Thursday",
         "start_time" => "1200",
         "duration" => "60 Minutes",
-        "capacity" => 0
+        "capacity" => 2
         })
 
   activity1.save()
